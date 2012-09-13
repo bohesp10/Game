@@ -9,18 +9,23 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Input.Touch;
 using Microsoft.Xna.Framework.Media;
+using AwesomeGame.Rendering;
+using AwesomeGame.GameEnities;
 
 namespace AwesomeGame
 {
     /// <summary>
     /// This is the main type for your game
     /// </summary>
-    public class Game1 : Microsoft.Xna.Framework.Game
+    public class AwesomeGame : Microsoft.Xna.Framework.Game
     {
-        GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
+        private GraphicsDeviceManager graphics;
+        private SpriteBatch spriteBatch;
+        private RenderManager renderManager;
+        private List<GameObject> gameObjects = new List<GameObject>();
 
-        public Game1()
+
+        public AwesomeGame()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
@@ -30,6 +35,12 @@ namespace AwesomeGame
 
             // Extend battery life under lock.
             InactiveSleepTime = TimeSpan.FromSeconds(1);
+
+            /**
+             * Viser seg at emulatoren fucker seg for folk med ATI kort 
+             * derfor ble jeg nødt til å sette denne. :/
+             */
+            graphics.IsFullScreen = true;
         }
 
         /// <summary>
@@ -53,6 +64,14 @@ namespace AwesomeGame
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            renderManager = new RenderManager(this, spriteBatch);
+            MyTestObject objectOne = new MyTestObject(this, new Point(100, 100));
+            gameObjects.Add(objectOne);
+
+            foreach (GameObject gameObject in gameObjects)
+            {
+                gameObject.LoadContent();
+            }
 
             // TODO: use this.Content to load your game content here
         }
@@ -73,12 +92,16 @@ namespace AwesomeGame
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+            float elapsedFrameTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
-            // TODO: Add your update logic here
+            foreach (GameObject gameObject in gameObjects)
+            {
 
+                gameObject.Update(elapsedFrameTime);
+            }
             base.Update(gameTime);
         }
 
@@ -88,10 +111,7 @@ namespace AwesomeGame
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
-
-            // TODO: Add your drawing code here
-
+            GraphicsDevice.Clear(Color.LightGoldenrodYellow);
             base.Draw(gameTime);
         }
     }
