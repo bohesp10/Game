@@ -10,16 +10,15 @@ namespace AwesomeGame.GameEnities
 {
     public abstract class GameObject : Renderable
     {
-        protected  abstract Sprite objectSprite{ get; }
+        protected Sprite objectSprite { get; set; }
         protected Game game;
         protected Vector2 position;
 
         public GameObject(Game game, Point position)
         {
             this.game = game;
-            RenderManager renderManager = 
-                (RenderManager)game.Services.GetService(typeof(IRenderService));
-            renderManager.AddRenderable(this);
+            ((RenderManager)game.Services.GetService(
+                typeof(IRenderService))).AddRenderable(this);
             this.position = new Vector2(position.X, position.Y);
         }
 
@@ -46,28 +45,27 @@ namespace AwesomeGame.GameEnities
         public abstract void Update(float deltaTime);
     }
 
+    /// <summary>
+    /// Example of how a gameobject can be created. 
+    /// easy huh? :D
+    /// </summary>
     public class MyTestObject : GameObject
     {
-        private StaticSprite testSprite;
-
         public MyTestObject(Game game, Point position)
             : base(game, position)
         {
-            testSprite = new StaticSprite();
-        }
-
-        protected override Sprite objectSprite
-        {
-            get { return testSprite; }
+            objectSprite = new StaticSprite();
         }
 
         public override void LoadContent()
         {
-            testSprite.sprite = game.Content.Load<Texture2D>("green");
+            objectSprite.sprite = game.Content.Load<Texture2D>("green");
         }
 
         public override void Update(float deltaTime)
         {
+            // Insert Update logic here. 
+            // Input and movement.
             objectSprite.Update(position);
         }
     }
