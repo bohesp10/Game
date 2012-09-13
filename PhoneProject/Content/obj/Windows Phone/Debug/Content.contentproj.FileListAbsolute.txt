@@ -1,0 +1,2 @@
+C:\XNA og C#\Mappe 2\PhoneProject\Content\obj\Windows Phone\Debug\ResolveAssemblyReference.cache
+E:\Users\StenMarius\Desktop\PhoneProject\Content\obj\Windows Phone\Debug\ResolveAssemblyReference.cache
