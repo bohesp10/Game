@@ -36,10 +36,6 @@ namespace GameStateManagement.Game.GameObjects
         }
     }
 
-    /// <summary>
-    /// Example of how a gameobject can be created. 
-    /// easy huh? :D
-    /// </summary>
     public class Player : Character
     {
         public Player(Microsoft.Xna.Framework.Game game, Point position)
@@ -85,24 +81,4 @@ namespace GameStateManagement.Game.GameObjects
 
         }
     }
-
-  /*  public class GreenDude : Player
-    {
-        public GreenDude(Microsoft.Xna.Framework.Game game, Point position)
-            : base(game, position)
-        { 
-            
-        }
-
-        public override void LoadContent()
-        {
-            objectSprite = game.Content.Load<Texture2D>("green");
-            base.LoadContent();
-        }
-
-        public override void DoAction()
-        {
-            
-        }
-    }*/
 }
