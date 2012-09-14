@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 
 namespace AwesomeGame.GameEnities
 {
-    public abstract class GameObject : Renderable
+    public abstract class GameObject
     {
         protected Sprite objectSprite { get; set; }
         protected Game game;
@@ -17,8 +17,7 @@ namespace AwesomeGame.GameEnities
         public GameObject(Game game, Point position)
         {
             this.game = game;
-            ((RenderManager)game.Services.GetService(
-                typeof(IRenderService))).AddRenderable(this);
+            
             this.position = new Vector2(position.X, position.Y);
         }
 
@@ -60,13 +59,16 @@ namespace AwesomeGame.GameEnities
         public override void LoadContent()
         {
             objectSprite.sprite = game.Content.Load<Texture2D>("green");
+            ((RenderManager)game.Services.GetService(
+                typeof(IRenderService))).AddRenderable(objectSprite);
         }
 
         public override void Update(float deltaTime)
         {
             // Insert Update logic here. 
             // Input and movement.
-            objectSprite.Update(position);
+            objectSprite.SetNewSpritePos(position);
+            
         }
     }
 }

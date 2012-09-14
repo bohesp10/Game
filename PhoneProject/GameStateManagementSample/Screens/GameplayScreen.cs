@@ -15,6 +15,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
+using GameStateManagement.Game.GameObjects;
 #endregion
 
 namespace GameStateManagement
@@ -34,11 +35,9 @@ namespace GameStateManagement
         Vector2 playerPosition = new Vector2(100, 100);
         Vector2 enemyPosition = new Vector2(100, 100);
         private SpriteBatch spriteBatch;
-        private static GameRenderManager renderManager;
-        private List<Character> playerCharacters = new List<Character>();
-        private int activePlayerIndex;
-        private Character activePlayer;
         Random random = new Random();
+
+        List<GameObject> gameObjects = new List<GameObject>();
 
         #endregion
 
@@ -52,7 +51,6 @@ namespace GameStateManagement
         {
             TransitionOnTime = TimeSpan.FromSeconds(1.5);
             TransitionOffTime = TimeSpan.FromSeconds(0.5);
-            activePlayerIndex = 0;
             
         }
 
@@ -66,23 +64,13 @@ namespace GameStateManagement
                 content = new ContentManager(ScreenManager.Game.Services, "Content");
             spriteBatch = ScreenManager.SpriteBatch;
             gameFont = content.Load<SpriteFont>("gamefont");
+            gameObjects.Add(new Player(ScreenManager.Game, new Point(100, 100)));
 
+            foreach (GameObject gameObject in gameObjects)
+            {
+                gameObject.LoadContent();
+            }
 
-            #region gameStuff
-            renderManager = new GameRenderManager(spriteBatch);
-
-            PlaceholderBackground background = new PlaceholderBackground(renderManager, content);
-            BlueCharacter blueChar = new BlueCharacter(renderManager, content, new Point(100, 100));
-            RedCharacter redChar = new RedCharacter(renderManager, content, new Point(200, 200));
-            GreenCharacter greenChar = new GreenCharacter(renderManager, content, new Point(300, 300));
-            
-            
-            playerCharacters.Add(greenChar);
-            playerCharacters.Add(blueChar);
-            playerCharacters.Add(redChar);
-
-            activePlayer = playerCharacters[activePlayerIndex];
-            #endregion
 
             // A real game would probably have more content than this sample, so
             // it would take longer to load. We simulate that by delaying for a
@@ -135,8 +123,6 @@ namespace GameStateManagement
 
                 enemyPosition = Vector2.Lerp(enemyPosition, targetPosition, 0.05f);
 
-
-                activePlayer.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
             }
         }
 
@@ -205,15 +191,19 @@ namespace GameStateManagement
             spriteBatch = ScreenManager.SpriteBatch;
             spriteBatch.Begin();
 
-            /*spriteBatch.DrawString(gameFont, "// TODO", playerPosition, Color.Green);
+            foreach (GameObject gameObject in gameObjects)
+            {
+                if (gameObject.objectSprite != null)
+                {
+                    spriteBatch.Draw(
+                        gameObject.objectSprite,
+                        gameObject.destinationBox,
+                        gameObject.sourceBox,
+                        Color.White
+                    );
+                }
+            }
 
-            spriteBatch.DrawString(gameFont, "Insert Gameplay Here",
-                                   enemyPosition, Color.DarkRed);
-             */
-
-            
-
-            renderManager.Render(); // Render everything the renderManager takes care of
             spriteBatch.End();
 
             // If the game is transitioning on or off, fade it out to black.

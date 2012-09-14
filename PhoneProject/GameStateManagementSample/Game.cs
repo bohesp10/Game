@@ -11,6 +11,8 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
+using System.Collections.Generic;
+using GameStateManagement.Game.GameObjects;
 #endregion
 
 namespace GameStateManagement
@@ -27,6 +29,7 @@ namespace GameStateManagement
 
         GraphicsDeviceManager graphics;
         ScreenManager screenManager;
+        List<GameObject> gameObjects = new List<GameObject>();
 
         #endregion
 
@@ -53,6 +56,7 @@ namespace GameStateManagement
             // Create the screen manager component.
             screenManager = new ScreenManager(this);
 
+            // Note make sure to render in correct order
             Components.Add(screenManager);
 
             // attempt to deserialize the screen manager from disk. if that

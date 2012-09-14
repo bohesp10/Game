@@ -80,7 +80,7 @@ namespace GameStateManagement
         /// <summary>
         /// Constructs a new screen manager component.
         /// </summary>
-        public ScreenManager(Game game)
+        public ScreenManager(Microsoft.Xna.Framework.Game game)
             : base(game)
         {
             // we must set EnabledGestures before we can query for them, but

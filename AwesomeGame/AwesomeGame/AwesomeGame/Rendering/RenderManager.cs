@@ -21,8 +21,8 @@ namespace AwesomeGame.Rendering
 
         public RenderManager(Game game, SpriteBatch spriteBatch)
             : base(game)
-        {    
-            this.spriteBatch = spriteBatch;
+        {
+            this.spriteBatch = new SpriteBatch(game.GraphicsDevice);
             game.Components.Add(this);
             game.Services.AddService(typeof(IRenderService), this);
         }

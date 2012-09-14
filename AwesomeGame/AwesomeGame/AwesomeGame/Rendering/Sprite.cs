@@ -36,7 +36,7 @@ namespace AwesomeGame.Rendering
             set { _sourceBox = value; }
         }
 
-        public abstract void Update(Vector2 objectPos);
+        public abstract void SetNewSpritePos(Vector2 objectPos);
     }
 
     /// <summary>
@@ -50,7 +50,7 @@ namespace AwesomeGame.Rendering
 
         }
 
-        public override void Update(Vector2 objectPos)
+        public override void SetNewSpritePos(Vector2 objectPos)
         {
             collisionBox = new Rectangle(
                 (int)objectPos.X,
