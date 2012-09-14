@@ -16,7 +16,6 @@ C:\XNA og C#\Mappe 2\PhoneProject\GameStateManagementSample\obj\Windows Phone\De
 C:\XNA og C#\Mappe 2\PhoneProject\GameStateManagementSample\bin\Windows Phone\Debug\AppManifest.xaml
 C:\XNA og C#\Mappe 2\PhoneProject\GameStateManagementSample\obj\Windows Phone\Debug\WMAppManifest.xml.g
 C:\XNA og C#\Mappe 2\PhoneProject\GameStateManagementSample\obj\Windows Phone\Debug\WMAppManifest.xml
-bin\Windows Phone\Debug\
 C:\XNA og C#\Mappe 2\PhoneProject\GameStateManagementSample\bin\Windows Phone\Debug\GameStateManagementSample.xap
 C:\XNA og C#\Mappe 2\PhoneProject\GameStateManagementSample\obj\Windows Phone\Debug\XapCacheFile.xml
 E:\Users\StenMarius\Desktop\PhoneProject\GameStateManagementSample\bin\Windows Phone\Debug\Content\background.xnb
@@ -39,3 +38,31 @@ E:\Users\StenMarius\Desktop\PhoneProject\GameStateManagementSample\obj\Windows P
 E:\Users\StenMarius\Desktop\PhoneProject\GameStateManagementSample\obj\Windows Phone\Debug\WMAppManifest.xml
 E:\Users\StenMarius\Desktop\PhoneProject\GameStateManagementSample\bin\Windows Phone\Debug\GameStateManagementSample.xap
 E:\Users\StenMarius\Desktop\PhoneProject\GameStateManagementSample\obj\Windows Phone\Debug\XapCacheFile.xml
+C:\Github\Game\PhoneProject\GameStateManagementSample\bin\Windows Phone\Debug\Content\background.xnb
+C:\Github\Game\PhoneProject\GameStateManagementSample\bin\Windows Phone\Debug\Content\blank.xnb
+C:\Github\Game\PhoneProject\GameStateManagementSample\bin\Windows Phone\Debug\Content\gradient.xnb
+C:\Github\Game\PhoneProject\GameStateManagementSample\bin\Windows Phone\Debug\Content\blue.xnb
+C:\Github\Game\PhoneProject\GameStateManagementSample\bin\Windows Phone\Debug\Content\green.xnb
+C:\Github\Game\PhoneProject\GameStateManagementSample\bin\Windows Phone\Debug\Content\red.xnb
+C:\Github\Game\PhoneProject\GameStateManagementSample\bin\Windows Phone\Debug\Content\TheLostVikings2.xnb
+C:\Github\Game\PhoneProject\GameStateManagementSample\bin\Windows Phone\Debug\Content\game menu.xnb
+C:\Github\Game\PhoneProject\GameStateManagementSample\bin\Windows Phone\Debug\Content\menufont.xnb
+C:\Github\Game\PhoneProject\GameStateManagementSample\bin\Windows Phone\Debug\Content\gamefont.xnb
+C:\Github\Game\PhoneProject\GameStateManagementSample\bin\Windows Phone\Debug\GameStateManagementSample.dll
+C:\Github\Game\PhoneProject\GameStateManagementSample\bin\Windows Phone\Debug\GameStateManagementSample.pdb
+C:\Github\Game\PhoneProject\GameStateManagementSample\obj\Windows Phone\Debug\ResolveAssemblyReference.cache
+C:\Github\Game\PhoneProject\GameStateManagementSample\obj\Windows Phone\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Github\Game\PhoneProject\GameStateManagementSample\obj\Windows Phone\Debug\GameStateManagementSample.dll
+C:\Github\Game\PhoneProject\GameStateManagementSample\obj\Windows Phone\Debug\GameStateManagementSample.pdb
+C:\Github\Game\PhoneProject\GameStateManagementSample\bin\Windows Phone\Debug\AppManifest.xaml
+C:\Github\Game\PhoneProject\GameStateManagementSample\obj\Windows Phone\Debug\WMAppManifest.xml.g
+C:\Github\Game\PhoneProject\GameStateManagementSample\obj\Windows Phone\Debug\WMAppManifest.xml
+bin\Windows Phone\Debug\
+C:\Github\Game\PhoneProject\GameStateManagementSample\bin\Windows Phone\Debug\GameStateManagementSample.xap
+C:\Github\Game\PhoneProject\GameStateManagementSample\obj\Windows Phone\Debug\XapCacheFile.xml
+C:\Github\Game\PhoneProject\GameStateManagementSample\bin\Windows Phone\Debug\GameStateManagementSample.xap
+C:\Github\Game\PhoneProject\GameStateManagementSample\obj\Windows Phone\Debug\XapCacheFile.xml
+C:\Github\Game\PhoneProject\GameStateManagementSample\bin\Windows Phone\Debug\AppManifest.xaml
+C:\Github\Game\PhoneProject\GameStateManagementSample\obj\Windows Phone\Debug\WMAppManifest.xml.g
+C:\Github\Game\PhoneProject\GameStateManagementSample\obj\Windows Phone\Debug\WMAppManifest.xml
+bin\Windows Phone\Debug\

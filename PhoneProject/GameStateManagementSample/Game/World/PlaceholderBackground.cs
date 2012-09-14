@@ -24,7 +24,7 @@ namespace GameStateManagement
         /// </summary>
         public void LoadContent()
         {
-            guiElement = content.Load<Texture2D>("TheLostVikings2");
+            guiElement = content.Load<Texture2D>("game menu");
         }
 
 

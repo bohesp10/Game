@@ -10,11 +10,13 @@
 #region Using Statements
 using System;
 using System.Threading;
+using System.Diagnostics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
+using Microsoft.Xna.Framework.Input.Touch;
 #endregion
 
 namespace GameStateManagement
@@ -40,6 +42,8 @@ namespace GameStateManagement
         private Character activePlayer;
         Random random = new Random();
 
+        Rectangle burp;
+        Rectangle durp;
         #endregion
 
         #region Initialization
@@ -53,6 +57,10 @@ namespace GameStateManagement
             TransitionOnTime = TimeSpan.FromSeconds(1.5);
             TransitionOffTime = TimeSpan.FromSeconds(0.5);
             activePlayerIndex = 0;
+            EnabledGestures = GestureType.Hold | GestureType.Tap;
+           // EnabledGestures = 
+            burp = new Rectangle(0, 0, 400, 480);
+            durp = new Rectangle(400, 480, 400, 480);
             
         }
 
@@ -156,41 +164,75 @@ namespace GameStateManagement
             KeyboardState keyboardState = input.CurrentKeyboardStates[playerIndex];
             GamePadState gamePadState = input.CurrentGamePadStates[playerIndex];
 
+            List<GestureSample> gestures = input.Gestures;
+            foreach (GestureSample gs in gestures)
+            {
+                Vector2 position;
+                switch (gs.GestureType)
+                {
+                    case GestureType.Tap:
+                        position = gs.Position;
+                        CheckForAbilitiesUse(position);
+                        break;
+                    case GestureType.Hold:
+                        position = gs.Position;
+                        break;
+                }
+            }
+           
             // if the user pressed the back button, we return to the main menu
             PlayerIndex player;
             if (input.IsNewButtonPress(Buttons.Back, ControllingPlayer, out player))
             {
                 LoadingScreen.Load(ScreenManager, false, ControllingPlayer, new BackgroundScreen(), new MainMenuScreen());
             }
-            else
-            {
-                // Otherwise move the player position.
-                Vector2 movement = Vector2.Zero;
 
-                if (keyboardState.IsKeyDown(Keys.Left))
-                    movement.X--;
+            #region asd
+            //    else
+            //    {
+            //        // Otherwise move the player position.
+            //        Vector2 movement = Vector2.Zero;
 
-                if (keyboardState.IsKeyDown(Keys.Right))
-                    movement.X++;
+            //        if (keyboardState.IsKeyDown(Keys.Left))
+            //            movement.X--;
 
-                if (keyboardState.IsKeyDown(Keys.Up))
-                    movement.Y--;
+            //        if (keyboardState.IsKeyDown(Keys.Right))
+            //            movement.X++;
 
-                if (keyboardState.IsKeyDown(Keys.Down))
-                    movement.Y++;
+            //        if (keyboardState.IsKeyDown(Keys.Up))
+            //            movement.Y--;
 
-                Vector2 thumbstick = gamePadState.ThumbSticks.Left;
+            //        if (keyboardState.IsKeyDown(Keys.Down))
+            //            movement.Y++;
 
-                movement.X += thumbstick.X;
-                movement.Y -= thumbstick.Y;
+            //        Vector2 thumbstick = gamePadState.ThumbSticks.Left;
 
-                if (movement.Length() > 1)
-                    movement.Normalize();
+            //        movement.X += thumbstick.X;
+            //        movement.Y -= thumbstick.Y;
 
-                playerPosition += movement * 2;
-            }
+            //        if (movement.Length() > 1)
+            //            movement.Normalize();
+
+            //        playerPosition += movement * 2;
+            //    }
+            #endregion
+
         }
 
+        private void CheckForAbilitiesUse(Vector2 position)
+        {
+            if (burp.Contains((int)position.X, (int)position.Y))
+            {
+                Debug.WriteLine("X:{0}, Y:{1}", position.X, position.Y);
+            }
+        }
+        private void CheckForMovement(Vector2 position)
+        {
+            if(durp.Contains((int)position.X, (int)position.Y))
+            {
+                Debug.WriteLine("X:{0}, Y:{1}", position.X, position.Y);
+            }
+        }
 
         /// <summary>
         /// Draws the gameplay screen.
