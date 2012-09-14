@@ -59,9 +59,3 @@ C:\Users\Sten Marius\Documents\GitHub\Game\PhoneProject\GameStateManagementSampl
 C:\Users\Sten Marius\Documents\GitHub\Game\PhoneProject\GameStateManagementSample\obj\Windows Phone\Debug\WMAppManifest.xml
 C:\Users\Sten Marius\Documents\GitHub\Game\PhoneProject\GameStateManagementSample\bin\Windows Phone\Debug\GameStateManagementSample.xap
 C:\Users\Sten Marius\Documents\GitHub\Game\PhoneProject\GameStateManagementSample\obj\Windows Phone\Debug\XapCacheFile.xml
-C:\Users\Sten Marius\Documents\GitHub\Game\PhoneProject\GameStateManagementSample\bin\Windows Phone\Debug\GameStateManagementSample.xap
-C:\Users\Sten Marius\Documents\GitHub\Game\PhoneProject\GameStateManagementSample\obj\Windows Phone\Debug\XapCacheFile.xml
-C:\Users\Sten Marius\Documents\GitHub\Game\PhoneProject\GameStateManagementSample\bin\Windows Phone\Debug\AppManifest.xaml
-C:\Users\Sten Marius\Documents\GitHub\Game\PhoneProject\GameStateManagementSample\obj\Windows Phone\Debug\WMAppManifest.xml.g
-C:\Users\Sten Marius\Documents\GitHub\Game\PhoneProject\GameStateManagementSample\obj\Windows Phone\Debug\WMAppManifest.xml
-bin\Windows Phone\Debug\

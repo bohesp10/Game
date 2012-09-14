@@ -57,6 +57,7 @@ namespace GameStateManagement
             LastGamePadStates = new GamePadState[MaxInputs];
 
             GamePadWasConnected = new bool[MaxInputs];
+
         }
 
 
